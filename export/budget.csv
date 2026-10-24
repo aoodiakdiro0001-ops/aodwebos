@@ -1,0 +1,7 @@
+﻿key,label_ar,label_en,step,def
+domain_year,سعر النطاق سنوياً,Domain per year,1,12
+hosting_month,سعر الاستضافة شهرياً,Hosting monthly,1,10
+tools_month,أدوات شهرياً (قوالب، بريد، إحصاء),Tools monthly,5,40
+pages,عدد الصفحات عند الإطلاق,Pages at launch,1,10
+hours_per_page,ساعات العمل لكل صفحة,Hours per page,0.5,3
+hour_rate,سعر الساعة للمصمم,$/hour,5,25

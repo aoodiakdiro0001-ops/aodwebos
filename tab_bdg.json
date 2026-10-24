@@ -1,0 +1,56 @@
+{
+ "key": "budget",
+ "type": "calc",
+ "icon": "🧮",
+ "color": "#2ad3a7",
+ "label_ar": "حاسبة كلفة الموقع",
+ "label_en": "Site Cost Calculator",
+ "note": "تقدير ترتيبي لا رقم تعاقد: استبدل الأسعار بوثيقة مزوّدك الحالية، ولا تنسَ كلفة الساعات للحفظ والتصميم.",
+ "fields": [
+  {
+   "key": "domain_year",
+   "label_ar": "سعر النطاق سنوياً",
+   "label_en": "Domain per year",
+   "step": 1,
+   "def": 12
+  },
+  {
+   "key": "hosting_month",
+   "label_ar": "سعر الاستضافة شهرياً",
+   "label_en": "Hosting monthly",
+   "step": 1,
+   "def": 10
+  },
+  {
+   "key": "tools_month",
+   "label_ar": "أدوات شهرياً (قوالب، بريد، إحصاء)",
+   "label_en": "Tools monthly",
+   "step": 5,
+   "def": 40
+  },
+  {
+   "key": "pages",
+   "label_ar": "عدد الصفحات عند الإطلاق",
+   "label_en": "Pages at launch",
+   "step": 1,
+   "def": 10
+  },
+  {
+   "key": "hours_per_page",
+   "label_ar": "ساعات العمل لكل صفحة",
+   "label_en": "Hours per page",
+   "step": 0.5,
+   "def": 3
+  },
+  {
+   "key": "hour_rate",
+   "label_ar": "سعر الساعة للمصمم",
+   "label_en": "$/hour",
+   "step": 5,
+   "def": 25
+  }
+ ],
+ "formula_js": "(v) => { var fixed_m = v.hosting_month + v.tools_month; var fixed_y = fixed_m * 12 + v.domain_year; var build = v.pages * v.hours_per_page * v.hour_rate; var y1 = fixed_y + build; var y2 = fixed_y; return '<b>' + y1.toFixed(0) + '</b> دولار في السنة الأولى (شاملة البناء <b>' + build.toFixed(0) + '</b> دولار)، ثم <b>' + y2.toFixed(0) + '</b> دولار سنوياً بعدها أي <b>' + (y2/12).toFixed(2) + '</b> دولار شهرياً.'; }",
+ "formulaNote2Title": "تفصيل الصيغة",
+ "formulaNote": "الثابت الشهري = الاستضافة + الأدوات. السنوي الثابت = الثابت × 12 + النطاق. البناء = الصفحات × ساعاتها × سعر الساعة. السنة الأولى = الثابت + البناء، وبعدها الثابت فقط. راقب عدد الأدوات: كل أداة ضيافة شهرياً تعني منتجاً إضافياً كل شهر."
+}
